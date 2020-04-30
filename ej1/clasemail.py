@@ -24,7 +24,10 @@ class email:
     def crearCuenta(self, correo,pass2=''):
         grupo = re.search(r'([a-zA-Z0-9/-_]+)@([a-zA-Z0-9/-]+).([a-z]+)', correo)
         if (type(grupo)==re.Match):
-           self.__init__(grupo.group(1),grupo.group(2),grupo.group(3),pass2)
+            self.__idcuenta=grupo.group(1)
+            self.__dominio=grupo.group(2)
+            self.__tipodom=grupo.group(3)
+            self.__pass=pass2
         else:
             print("usted ingreso un correo invalido")
 
